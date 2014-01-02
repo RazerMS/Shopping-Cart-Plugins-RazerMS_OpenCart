@@ -4,7 +4,7 @@
  * 
  * @package Payment Gateway
  * @author MOLPay Technical Team <technical@molpay.com>
- * @version 1.3.0
+ * @version 1.4.0
  */
 
 class ControllerPaymentMolpay extends Controller {

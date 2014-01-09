@@ -55,15 +55,15 @@ class ControllerPaymentMolpay extends Controller {
         $merchantid = $this->config->get('molpay_merchantid');
         $verifykey = $this->config->get('molpay_verifykey');
 
-        $tranID 	= $_POST['tranID'];
-        $orderid 	= $_POST['orderid'];
-        $status 	= $_POST['status'];
-        $domain 	= $_POST['domain'];
-        $amount 	= $_POST['amount'];
-        $currency 	= $_POST['currency'];
-        $appcode 	= $_POST['appcode'];
-        $paydate 	= $_POST['paydate'];
-        $skey 		= $_POST['skey'];
+        $tranID = $_POST['tranID'];
+        $orderid = $_POST['orderid'];
+        $status = $_POST['status'];
+        $domain = $_POST['domain'];
+        $amount = $_POST['amount'];
+        $currency = $_POST['currency'];
+        $appcode = $_POST['appcode'];
+        $paydate = $_POST['paydate'];
+        $skey = $_POST['skey'];
 
         $key0 = md5($tranID.$orderid.$status.$domain.$amount.$currency);
         $key1 = md5($paydate.$merchantid.$key0.$appcode.$verifykey);
@@ -76,10 +76,10 @@ class ControllerPaymentMolpay extends Controller {
         $this->model_checkout_order->confirm($this->request->post['orderid'], $this->config->get('molpay_order_status_id'));
         
         if ( $status == "00" )  {
-            $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Normal Return', true);
+            $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Normal Return', false);
             $this->redirect(HTTP_SERVER . 'index.php?route=checkout/success');
         } else {
-            $this->model_checkout_order->update($orderid , $this->config->get('molpay_failed_status_id'), 'MP Normal Return', true);
+            $this->model_checkout_order->update($orderid , $this->config->get('molpay_failed_status_id'), 'MP Normal Return', false);
             
             $this->data['continue'] = $this->url->link('checkout/cart');
 
@@ -99,16 +99,16 @@ class ControllerPaymentMolpay extends Controller {
         $merchantid = $this->config->get('molpay_merchantid');
         $verifykey = $this->config->get('molpay_verifykey');
 
-        $nbcb		= $_POST['nbcb'];
-        $tranID		= $_POST['tranID'];
-        $orderid	= $_POST['orderid'];
-        $status		= $_POST['status'];
-        $domain		= $_POST['domain'];
-        $amount		= $_POST['amount'];
-        $currency	= $_POST['currency'];
-        $appcode	= $_POST['appcode'];
-        $paydate	= $_POST['paydate'];
-        $skey		= $_POST['skey'];
+        $nbcb = $_POST['nbcb'];
+        $tranID = $_POST['tranID'];
+        $orderid = $_POST['orderid'];
+        $status = $_POST['status'];
+        $domain = $_POST['domain'];
+        $amount = $_POST['amount'];
+        $currency = $_POST['currency'];
+        $appcode = $_POST['appcode'];
+        $paydate = $_POST['paydate'];
+        $skey = $_POST['skey'];
 
         $key0 = md5($tranID.$orderid.$status.$domain.$amount.$currency);
         $key1 = md5($paydate.$merchantid.$key0.$appcode.$verifykey);
@@ -124,10 +124,10 @@ class ControllerPaymentMolpay extends Controller {
             $this->model_checkout_order->confirm($this->request->post['orderid'], $this->config->get('molpay_order_status_id'));
             
             if ( $status == "00" ) {                
-                $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Callback Return', true);
+                $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Callback Return', false);
             }
             else { 
-                $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', true);
+                $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
             }
         }
     }

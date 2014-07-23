@@ -34,6 +34,14 @@ Installations
 
 6. Save the configuration.
 
+7. To set the Return URL and callback URL for this module, logon to your MOLPay Control Panel and go to your Merchant Profile. Add the following line into Return URL and callback URL field on your merchant profile and save the changes 
+
+    `Return URL : http://www.yourdomain.com.my/index.php?route=payment/molpay/callback`
+    
+    `Callback URL : http://www.yourdomain.com.my/index.php?route=payment/molpay/callback_nb`
+
+    **Kindly replace `www.yourdomain.com.my` with your online shop URL.
+
 Contribution
 ------------
 

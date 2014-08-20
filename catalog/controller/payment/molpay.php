@@ -1,4 +1,12 @@
 <?php
+/**
+ * MOLPay OpenCart Plugin
+ * 
+ * @package Payment Gateway
+ * @author MOLPay Technical Team <technical@molpay.com>
+ * @version 1.5.0
+ */
+
 class ControllerPaymentMolpay extends Controller {
     
     protected function index() {

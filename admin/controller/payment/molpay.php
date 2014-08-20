@@ -1,4 +1,12 @@
 <?php
+/**
+ * MOLPay OpenCart Plugin
+ * 
+ * @package Payment Gateway
+ * @author MOLPay Technical Team <technical@molpay.com>
+ * @version 1.5.0
+ */
+ 
 class ControllerPaymentMolpay extends Controller {
     
     private $error = array(); 
@@ -173,10 +181,10 @@ class ControllerPaymentMolpay extends Controller {
         curl_setopt($ch, CURLOPT_POST, TRUE);
         curl_setopt($ch, CURLOPT_POSTFIELDS     , http_build_query($postdata));
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-        curl_setopt($ch, CURLOPT_HEADER, TRUE);  // RETURN HTTP HEADERS
+        curl_setopt($ch, CURLOPT_HEADER, TRUE);
         curl_setopt($ch, CURLOPT_VERBOSE, TRUE);
         curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);  // RETURN THE CONTENTS OF 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         curl_setopt($ch, CURLOPT_SSLVERSION, 3);    

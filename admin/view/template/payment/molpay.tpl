@@ -46,6 +46,19 @@
                       </td>
                     </tr>
                     <tr>
+                      <td><?php echo $entry_pending_status; ?></td>
+                      <td><select name="molpay_pending_status_id">
+                          <?php foreach ($order_statuses as $order_status) { ?>
+                          <?php if ($order_status['order_status_id'] == $molpay_pending_status_id) { ?>
+                          <option value="<?php echo $order_status['order_status_id']; ?>" selected="selected"><?php echo $order_status['name']; ?></option>
+                          <?php } else { ?>
+                          <option value="<?php echo $order_status['order_status_id']; ?>"><?php echo $order_status['name']; ?></option>
+                          <?php } ?>
+                          <?php } ?>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
                         <td><?php echo $entry_success_status; ?></td>
                         <td><select name="molpay_success_status_id">
                             <?php foreach ($order_statuses as $order_status) { ?>

@@ -1,12 +1,4 @@
 <?php 
-/**
- * MOLPay OpenCart Plugin
- * 
- * @package Payment Gateway
- * @author MOLPay Technical Team <technical@molpay.com>
- * @version 1.4.0
- */
-
 class ModelPaymentMolpay extends Model {
     
     public function getMethod($address) {
@@ -32,7 +24,7 @@ class ModelPaymentMolpay extends Model {
             $method_data = array( 
                 'code'       => 'molpay',
                 'title'      => $this->language->get('text_title'),
-                        'sort_order' => $this->config->get('molpay_sort_order')
+                'sort_order' => $this->config->get('molpay_sort_order')
                 );
     	}
    

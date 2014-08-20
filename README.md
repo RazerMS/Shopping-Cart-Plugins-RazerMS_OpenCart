@@ -1,25 +1,23 @@
-MOLPay OpenCart Plugin
-=====================
-
+MOLPay OpenCart Plugin v1.5.0
+==============================
 MOLPay Plugin for OpenCart Shopping Cart develop by MOLPay technical team.
 
 
 Supported version
 -----------------
 OpenCart version 1.5.x.x
+OpenCart version 1.5.6.4(Tested)
 
 
 Notes
 -----
-
 MOLPay Sdn. Bhd. is not responsible for any problems that might arise from the use of this module. 
 Use at your own risk. Please backup any critical data before proceeding. For any query or 
-assistance, please email support@molpay.com 
+assistance, please email support@molpay.com
 
 
 Installations
 -------------
-
 1. Download or clone this repository. Copy all the file and paste it at your opencart root directory.  
 `<OpenCart_DIR>/admin/*`  
 `<OpenCart_DIR>/catalog/*`
@@ -32,31 +30,20 @@ Installations
 
 5. Fill in your MOLPay Merchant ID & MOLPay Verify Key into the respective fields.
 
-6. Save the configuration.
-
-7. To set the Return URL and callback URL for this module, logon to your MOLPay Control Panel and go to your Merchant Profile. Add the following line into Return URL and callback URL field on your merchant profile and save the changes 
-
-    `Return URL : http://www.yourdomain.com.my/index.php?route=payment/molpay/callback`
-    
-    `Callback URL : http://www.yourdomain.com.my/index.php?route=payment/molpay/callback_nb`
-
-    **Kindly replace `www.yourdomain.com.my` with your online shop URL.
+6. Save the configuration and done.
 
 Contribution
 ------------
-
 You can contribute to this plugin by sending the pull request to this repository.
 
 
 Issues
 ------------
-
 Submit issue to this repository or email to our support@molpay.com
 
 
 Support
 -------
-
 Merchant Technical Support / Customer Care : support@molpay.com <br>
 Sales/Reseller Enquiry : sales@molpay.com <br>
 Marketing Campaign : marketing@molpay.com <br>

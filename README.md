@@ -8,13 +8,16 @@ Supported version
 OpenCart version 1.5.x.x <br>
 OpenCart version 1.5.6.4(Tested)
 
-
 Notes
 -----
 MOLPay Sdn. Bhd. is not responsible for any problems that might arise from the use of this module. 
 Use at your own risk. Please backup any critical data before proceeding. For any query or 
 assistance, please email support@molpay.com
 
+Requirements
+-----------------
+PHP (at least 5.2) <br>
+Curl
 
 Installations
 -------------

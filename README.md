@@ -2,7 +2,6 @@ MOLPay OpenCart Plugin v1.5.0
 ==============================
 MOLPay Plugin for OpenCart Shopping Cart develop by MOLPay technical team.
 
-
 Supported version
 -----------------
 OpenCart version 1.5.x.x <br>
@@ -14,8 +13,8 @@ MOLPay Sdn. Bhd. is not responsible for any problems that might arise from the u
 Use at your own risk. Please backup any critical data before proceeding. For any query or 
 assistance, please email support@molpay.com
 
-Requirements
------------------
+System Requirements
+--------------------
 PHP (at least 5.2) <br>
 Curl
 
@@ -39,11 +38,9 @@ Contribution
 ------------
 You can contribute to this plugin by sending the pull request to this repository.
 
-
 Issues
 ------------
 Submit issue to this repository or email to our support@molpay.com
-
 
 Support
 -------

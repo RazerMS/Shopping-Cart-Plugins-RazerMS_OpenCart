@@ -18,12 +18,14 @@ class ControllerPaymentMolpay extends Controller {
 
         $this->load->model('setting/setting');
 
-        if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+        
+        //if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
+        if ($this->request->server['REQUEST_METHOD'] == 'POST') {
             $this->model_setting_setting->editSetting('molpay', $this->request->post);				
             $this->session->data['success'] = $this->language->get('text_success');
             $this->redirect($this->url->link('extension/payment', 'token=' . $this->session->data['token'], 'SSL'));
         }
-
+        
         $this->data['heading_title'] = $this->language->get('heading_title');
 
         $this->data['text_enabled'] = $this->language->get('text_enabled');
@@ -163,6 +165,7 @@ class ControllerPaymentMolpay extends Controller {
         if (!$this->request->post['molpay_verifykey']) {
             $this->error['secret'] = $this->language->get('error_verifykey');
         }
+
 
         /***********************************************************
         * AUTO UPDATE TO MERCHANT PROFILE SETTINGS (DO NOT MODIFY)

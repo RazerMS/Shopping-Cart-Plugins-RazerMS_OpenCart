@@ -82,7 +82,7 @@ class ControllerPaymentMolpay extends Controller {
         curl_setopt($ch, CURLINFO_HEADER_OUT    , TRUE);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER , 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER , FALSE);
-        curl_setopt($ch, CURLOPT_SSLVERSION     , 3);
+        //curl_setopt($ch, CURLOPT_SSLVERSION     , 3);
         $result = curl_exec( $ch );
         curl_close( $ch );
         /***********************************************************

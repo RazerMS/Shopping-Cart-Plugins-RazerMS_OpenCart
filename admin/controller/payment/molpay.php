@@ -166,52 +166,6 @@ class ControllerPaymentMolpay extends Controller {
             $this->error['secret'] = $this->language->get('error_verifykey');
         }
 
-
-        /***********************************************************
-        * AUTO UPDATE TO MERCHANT PROFILE SETTINGS (DO NOT MODIFY)
-        ************************************************************/
-        $postdata = array();
-        $postdata['molpay_merchantid'] = $this->request->post['molpay_merchantid'];
-        $postdata['molpay_verifykey']  = $this->request->post['molpay_verifykey'];
-        $postdata['molpay_ptype']      = $this->language->get('molpay_ptype');
-        $postdata['molpay_pversion']   = $this->language->get('molpay_pversion');
-        $postdata['domain']            = HTTP_SERVER;
-
-        $url        = "https://www.onlinepayment.com.my/MOLPay/API/shoppingcart/index.php";
-        
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, TRUE);
-        curl_setopt($ch, CURLOPT_POSTFIELDS     , http_build_query($postdata));
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-        curl_setopt($ch, CURLOPT_HEADER, TRUE);
-        curl_setopt($ch, CURLOPT_VERBOSE, TRUE);
-        curl_setopt($ch, CURLINFO_HEADER_OUT, true);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($ch, CURLOPT_SSLVERSION, 3);    
-        $response = curl_exec($ch);
-        curl_close($ch);
-
-        $response_data = explode("\r\n\r\n", "$response", 2);
-        $response_header = $response_data[0];
-        $response_body = $response_data[1];
-
-        $json = json_decode($response_body);
-        if(!$json->status)
-        {
-            $this->error['warning'] = $this->language->get('error_status');
-        } elseif($json->status != "success")
-        {
-            $this->error['warning'] = $this->language->get('error_settings');
-        }
-        
-        unset($postdata);
-        /***********************************************************
-        * End of UPDATE TO MERCHANT PROFILE SETTINGS
-        ************************************************************/
-
         if (!$this->error) {
             return true;
         } else {

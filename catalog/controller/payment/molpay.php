@@ -153,9 +153,9 @@ class ControllerPaymentMolpay extends Controller {
             
             if ( $status == "00" ) {                
                 $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Callback Return', false);
-            } elseif ( $status ="22" ) { 
+            } elseif ( $status == "22" ) { 
                 $this->model_checkout_order->update($orderid, $this->config->get('molpay_pending_status_id'), 'MP Callback Return', false);
-            } elseif ( $status ="11" ) {
+            } elseif ( $status == "11" ) {
                 $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
             } else { 
                 $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
@@ -197,9 +197,9 @@ class ControllerPaymentMolpay extends Controller {
             
             if ( $status == "00" ) {                
                 $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Callback Return', false);
-            } elseif ( $status ="22" ) { 
+            } elseif ( $status == "22" ) { 
                 $this->model_checkout_order->update($orderid, $this->config->get('molpay_pending_status_id'), 'MP Callback Return', false);
-            } elseif ( $status ="11" ) {
+            } elseif ( $status == "11" ) {
                 $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
             } else { 
                 $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);

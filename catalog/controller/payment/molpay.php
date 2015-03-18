@@ -160,7 +160,7 @@ class ControllerPaymentMolpay extends Controller {
 	    }
 	    
         if ($nbcb == 1) {
-            echo "CBTOKEN:MPSTATOK";
+            echo "CBTOKEN:MPSTATOK"; exit;
         }
     }
 
@@ -205,7 +205,7 @@ class ControllerPaymentMolpay extends Controller {
                 $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
             }
         if ($nbcb == 2) {
-            echo "CBTOKEN:MPSTATOK";
+            echo "CBTOKEN:MPSTATOK"; exit;
         }
     }
 }

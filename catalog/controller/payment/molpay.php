@@ -144,22 +144,23 @@ class ControllerPaymentMolpay extends Controller {
         if ( $skey != $key1 )
             $status = -1 ;
 
-        if ($nbcb == 1) {
-            echo "CBTOKEN:MPSTATOK";
             $order_info = $this->model_checkout_order->getOrder($this->request->post['orderid']); // orderid
             
-            //Confirm the order If not created yet
-            $this->model_checkout_order->confirm($this->request->post['orderid'], $this->config->get('molpay_order_status_id'));
-            
-            if ( $status == "00" ) {                
-                $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Callback Return', false);
-            } elseif ( $status == "22" ) { 
-                $this->model_checkout_order->update($orderid, $this->config->get('molpay_pending_status_id'), 'MP Callback Return', false);
-            } elseif ( $status == "11" ) {
-                $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
-            } else { 
-                $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
-            }
+	    //Confirm the order If not created yet
+	    $this->model_checkout_order->confirm($this->request->post['orderid'], $this->config->get('molpay_order_status_id'));
+	    
+	    if ( $status == "00" ) {                
+	        $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Callback Return', false);
+	    } elseif ( $status == "22" ) { 
+	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_pending_status_id'), 'MP Callback Return', false);
+	    } elseif ( $status == "11" ) {
+	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
+	    } else { 
+	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
+	    }
+	    
+        if ($nbcb == 1) {
+            echo "CBTOKEN:MPSTATOK";
         }
     }
 
@@ -188,8 +189,7 @@ class ControllerPaymentMolpay extends Controller {
         if ( $skey != $key1 )
             $status = -1 ;
 
-        if ($nbcb == 2) {
-            echo "CBTOKEN:MPSTATOK";
+        
             $order_info = $this->model_checkout_order->getOrder($this->request->post['orderid']); // orderid
             
             //Confirm the order If not created yet
@@ -204,6 +204,8 @@ class ControllerPaymentMolpay extends Controller {
             } else { 
                 $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return', false);
             }
+        if ($nbcb == 2) {
+            echo "CBTOKEN:MPSTATOK";
         }
     }
 }

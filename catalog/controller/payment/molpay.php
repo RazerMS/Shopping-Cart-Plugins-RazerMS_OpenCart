@@ -100,13 +100,13 @@ class ControllerPaymentMolpay extends Controller {
         $this->model_checkout_order->confirm($this->request->post['orderid'], $this->config->get('molpay_order_status_id'));
         
         if ( $status == "00" )  {
-            $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Normal Return', false);
+            $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Normal Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
             $this->redirect(HTTP_SERVER . 'index.php?route=checkout/success');
         } elseif( $status == "22" ) {
-            $this->model_checkout_order->update($orderid , $this->config->get('molpay_pending_status_id'), 'MP Normal Return', false);
+            $this->model_checkout_order->update($orderid , $this->config->get('molpay_pending_status_id'), 'MP Normal Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
             $this->redirect(HTTP_SERVER . 'index.php?route=checkout/success');		
         } else {
-            $this->model_checkout_order->update($orderid , $this->config->get('molpay_failed_status_id'), 'MP Normal Return', false);
+            $this->model_checkout_order->update($orderid , $this->config->get('molpay_failed_status_id'), 'MP Normal Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
             
             $this->data['continue'] = $this->url->link('checkout/cart');
 
@@ -150,13 +150,13 @@ class ControllerPaymentMolpay extends Controller {
 	    $this->model_checkout_order->confirm($this->request->post['orderid'], $this->config->get('molpay_order_status_id'));
 	    
 	    if ( $status == "00" ) {                
-	        $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Callback Return - FROM: '.$_SERVER['REMOTE_ADDR'], false);
+	        $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Callback Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
 	    } elseif ( $status == "22" ) { 
-	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_pending_status_id'), 'MP Callback Return - FROM: '.$_SERVER['REMOTE_ADDR'], false);
+	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_pending_status_id'), 'MP Callback Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
 	    } elseif ( $status == "11" ) {
-	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return - FROM: '.$_SERVER['REMOTE_ADDR'], false);
+	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
 	    } else { 
-	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return - FROM: '.$_SERVER['REMOTE_ADDR'], false);
+	        $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Callback Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
 	    }
 	    
         if ($nbcb == 1) {
@@ -196,13 +196,13 @@ class ControllerPaymentMolpay extends Controller {
             $this->model_checkout_order->confirm($this->request->post['orderid'], $this->config->get('molpay_order_status_id'));
             
             if ( $status == "00" ) {                
-                $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Notification Return - FROM: '.$_SERVER['REMOTE_ADDR'], false);
+                $this->model_checkout_order->update($orderid , $this->config->get('molpay_success_status_id'), 'MP Notification Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
             } elseif ( $status == "22" ) { 
-                $this->model_checkout_order->update($orderid, $this->config->get('molpay_pending_status_id'), 'MP Notification Return - FROM: '.$_SERVER['REMOTE_ADDR'], false);
+                $this->model_checkout_order->update($orderid, $this->config->get('molpay_pending_status_id'), 'MP Notification Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
             } elseif ( $status == "11" ) {
-                $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Notification Return - FROM: '.$_SERVER['REMOTE_ADDR'], false);
+                $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Notification Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
             } else { 
-                $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Notification Return - FROM: '.$_SERVER['REMOTE_ADDR'], false);
+                $this->model_checkout_order->update($orderid, $this->config->get('molpay_failed_status_id'), 'MP Notification Return - FROM: '.$_SERVER['REMOTE_ADDR'].' REFERER: '.$_SERVER['HTTP_REFERER'], false);
             }
         if ($nbcb == 2) {
             echo "CBTOKEN:MPSTATOK"; exit;

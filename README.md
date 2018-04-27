@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/38641542/39344583-da87c94e-4a15-11e8-9ad4-b2b52165cfe0.jpg">
+
 MOLPay OpenCart Plugin v1.5.0
 ==============================
 MOLPay Plugin for OpenCart Shopping Cart develop by MOLPay technical team.

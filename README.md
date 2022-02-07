@@ -1,5 +1,5 @@
 
-Razer Merchant Services OpenCart Plugin v1.5.0
+[Shopping Cart Plugins] – RazerMS OpenCart
 ==============================
 <img src="https://user-images.githubusercontent.com/38641542/74417583-ebadb900-4e81-11ea-94b4-249009025b48.jpg">
 

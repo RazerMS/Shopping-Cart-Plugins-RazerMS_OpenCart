@@ -34,6 +34,17 @@ OpenCart version 1.5.x.x <br>
 [OpenCart version 1.5.6.4(Tested)](https://github.com/RazerMS/OpenCart_Plugin/releases/tag/v1.5.6.4) <br>
 [OpenCart version 1.5.6.4(Production & Sandbox Env selection)](https://github.com/RazerMS/OpenCart_Plugin/releases/tag/v1.5.6.4_2)
 
+
+## Resources
+
+- GitHub:     https://github.com/RazerMS
+- Website:    https://merchant.razer.com/
+- Twitter:    https://twitter.com/Razer_MS
+- YouTube:    https://www.youtube.com/c/RazerMerchantServices
+- Facebook:   https://www.facebook.com/RazerMerchantServices/
+- Instagram:  https://www.instagram.com/RazerMerchantServices/
+
+
 Issues
 ------------
 Submit issue to this repository or email to our support-sa@razer.com

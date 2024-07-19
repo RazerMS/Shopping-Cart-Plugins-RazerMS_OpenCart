@@ -1,13 +1,13 @@
 <?php
 /**
- * MOLPay OpenCart Plugin
+ * Fiuu OpenCart Plugin
  * 
  * @package Payment Gateway
- * @author MOLPay Technical Team <technical@molpay.com>
+ * @author Fiuu Technical Team <technical@molpay.com>
  * @version 1.5.0
  */
  
 // Text
-$_['text_title'] = 'MOLPay Malaysia Online Payment Gateway (Visa, MasterCard, Maybank2u, MEPS, FPX, etc )';
+$_['text_title'] = 'Fiuu Payment Gateway (Visa, MasterCard, Maybank2u, MEPS, FPX, etc )';
 
 ?>

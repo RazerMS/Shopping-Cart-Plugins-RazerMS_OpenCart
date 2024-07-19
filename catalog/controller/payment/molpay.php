@@ -1,6 +1,6 @@
 <?php
 /**
- * MOLPay OpenCart Plugin
+ * Fiuu OpenCart Plugin
  * 
  * @package Payment Gateway
  * @author MOLPay Technical Team <technical@molpay.com>

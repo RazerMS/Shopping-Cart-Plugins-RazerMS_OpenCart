@@ -1,3 +1,7 @@
+[Shopping Cart Plugins] – Fiuu OpenCart
+==============================
+<img src="https://user-images.githubusercontent.com/38641542/74417583-ebadb900-4e81-11ea-94b4-249009025b48.jpg">
+
 # 🚚 Repository Moved
 
 This repository has been moved to a new location and is no longer actively maintained.
@@ -11,11 +15,6 @@ All future updates, bug fixes, and feature enhancements will be published in the
 Thank you for your support.
 
 ---
-
-
-[Shopping Cart Plugins] – Fiuu OpenCart
-==============================
-<img src="https://user-images.githubusercontent.com/38641542/74417583-ebadb900-4e81-11ea-94b4-249009025b48.jpg">
 
 Introduction
 -----------------
@@ -72,3 +71,4 @@ Channel/Partner Enquiry : channel-sa@fiuu.com <br>
 Media Contact : media-sa@fiuu.com <br>
 R&D and Tech-related Suggestion : technical-sa@fiuu.com <br>
 Abuse Reporting : abuse-sa@fiuu.com
+
